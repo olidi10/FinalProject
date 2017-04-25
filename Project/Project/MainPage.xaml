@@ -7,5 +7,20 @@
   <Label Text="Final Project!"
            VerticalOptions="Center"
            HorizontalOptions="Center" />
-
+  <StackLayout>
+    <Entry Placeholder="School Name"/>
+  <Entry Placeholder="School Location"/>
+  <Entry Placeholder="First Name"/>
+  <Entry Placeholder="Last Name"/>
+  <Entry Placeholder="Alias"/>
+   <StackLayout>
+     <Entry Placeholder="Choose your Major"/>
+     <ListView>
+       
+       
+     </ListView>
+   </StackLayout>
+    <StackLayout><Entry IsPassword="True" Placeholder="Login"/></StackLayout>
+  
+  </StackLayout>
 </ContentPage>
