@@ -3,24 +3,83 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Project"
              x:Class="Project.MainPage">
+  
 
   <Label Text="Final Project!"
            VerticalOptions="Center"
            HorizontalOptions="Center" />
   <StackLayout>
-    <Entry Placeholder="School Name"/>
+    <Entry x:Name="titleEntry"
+ Placeholder="AluminaConnect" />
+    
+    <Grid VerticalOptions="FillAndExpand">
+    <Label Text="Final Project!"/>
+  <Entry Placeholder="School Name"/>
   <Entry Placeholder="School Location"/>
   <Entry Placeholder="First Name"/>
   <Entry Placeholder="Last Name"/>
   <Entry Placeholder="Alias"/>
-   <StackLayout>
-     <Entry Placeholder="Choose your Major"/>
-     <ListView>
-       
-       
-     </ListView>
-   </StackLayout>
-    <StackLayout><Entry IsPassword="True" Placeholder="Login"/></StackLayout>
+ 
+ <ContentView Grid.Row="0">
+ <StackLayout>
+ <Entry Placeholder="Choose your Major"/>
+ <ListView x:Name="viewList"
+ ItemSelected="OnViewListItemSelected">
+ <ListView.ItemsSource>
+ <x:Array Type="{x:Type x:String}">
+ <x:String>Software Programming</x:String>
+ <x:String>Robotics and engineering</x:String>
+ <x:String>Nursing</x:String>
+ <x:String>Project Management</x:String>
+ <x:String>Computer Networking</x:String>
+ <x:String>Dental Hygine</x:String>
+ <x:String>Social Science</x:String>
+ <x:String>AutoBody and Mechanics</x:String>
+ </x:Array>
+ </ListView.ItemsSource>
+ </ListView>
+ </StackLayout>
+ </ContentView> 
+    
+  <StackLayout>
+     
+ <Entry IsPassword ="True" Placeholder="Password"/> 
+    
   
+  <Button Text="ACCEPT REQUEST" FontSize="Large" HorizontalOptions="Center"
+ VerticalOptions="Center"/>
+ 
+         
+
+  <Button Text="DECLINE REQUEST" FontSize="Large" HorizontalOptions="Center"
+ VerticalOptions="Center"/>
+
+  <Button Text="SUBMIT REQUEST" FontSize="Large" HorizontalOptions="Center"
+ VerticalOptions="Center"/>
+
+    <Button Text="RESET" FontSize="Large" HorizontalOptions="Center"
+ VerticalOptions="Center"/>
+  
+  
+</StackLayout>
+      <ContentView Grid.Row="1">
+ <StackLayout>
+ <Label Text="Tap to remove from generated page:" />
+ <ListView x:Name="pageList"
+ ItemSelected="OnPageListItemSelected" />
+ </StackLayout>
+ </ContentView> 
+      
+      </Grid>
+  
+  <Button x:Name="generateButton"
+ Text="Generate the Page!"
+ IsEnabled="False"
+ HorizontalOptions="Center"
+ VerticalOptions="Center"
+ Clicked="OnGenerateButtonClicked" />
   </StackLayout>
+     
+    
+  
 </ContentPage>
