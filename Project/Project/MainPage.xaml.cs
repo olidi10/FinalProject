@@ -9,20 +9,42 @@ namespace Project
 {
     public partial class MainPage : ContentPage
     {
+
         
-
-
         public MainPage()
         {
             InitializeComponent();
+          
+
 
         }
-        //private void Button_OnCliked(object sender, EventArgs e)
-        //{
-        //    //  string text = SchoolEntry.Text;
-        //    //SchoolLabel.Text = "School" + text;
+        private void OnAcceptButtonClicked(object sender, EventArgs e)
+        {
+            //  string text = SchoolEntry.Text;
+            //SchoolLabel.Text = "School" + text;
 
-        //}
+        }
+        private void OnSubmitButtonClicked(object sender, EventArgs e)
+        {
+            //  string text = SchoolEntry.Text;
+            //SchoolLabel.Text = "School" + text;
+
+        }
+        private void OnDeclineButtonClicked(object sender, EventArgs e)
+        {
+            //  string text = SchoolEntry.Text;
+            //SchoolLabel.Text = "School" + text;
+
+        }
+        private void OnResetButtonClicked(object sender, EventArgs e)
+        {
+            //  string text = SchoolEntry.Text;
+            //SchoolLabel.Text = "School" + text;
+
+        }
+
+
+
 
     }
 }

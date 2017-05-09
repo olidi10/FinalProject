@@ -5,24 +5,21 @@
              
              x:Class="Project.MainPage">
   <ScrollView>
-  <StackLayout BackgroundColor="Blue" Padding="0,0,0,5">
-
-    <Label Text="Mobile Development final Project" 
+  <StackLayout BackgroundColor="Purple" Padding="0,0,0,5">
+    <Frame>
+    <Label Text="Mobile Development Final Project" 
            VerticalOptions="Center"
            HorizontalOptions="Center"
            FontSize="Large"/>
-
-    
+      </Frame>
     <Entry IsPassword ="True" Placeholder="LogIn"/>
-    <Entry Placeholder="School Name"/>
+    <Entry Placeholder="School Name" />
     <Entry Placeholder="School Location"/>
     <Entry Placeholder="First Name"/>
     <Entry Placeholder="Last Name"/>
     <Entry Placeholder="Alias"/>
-    <ContentView Grid.Row="0">
-      <StackLayout>
-        <Entry Placeholder="Choose your Major"/>
-        <ListView x:Name="Major">
+      <Entry Placeholder="Choose your Major"/>
+        <ListView x:Name="MajorList">
           <ListView.ItemsSource>
             <x:Array Type="{x:Type x:String}">
               <x:String>Software Programming</x:String>
@@ -35,20 +32,54 @@
               <x:String>AutoBody and Mechanics</x:String>
             </x:Array>
           </ListView.ItemsSource>
-        </ListView>
-      </StackLayout>
-    </ContentView>
-   <Button Text="ACCEPT REQUEST" FontSize="Large" HorizontalOptions="Center"
-       VerticalOptions="Center"/>
-      <Button Text="DECLINE REQUEST" FontSize="Large" HorizontalOptions="Center"
-     VerticalOptions="Center"/>
-
-      <Button Text="SUBMIT REQUEST" FontSize="Large" HorizontalOptions="Center"
-     VerticalOptions="Center"/>
-
-      <Button Text="RESET" FontSize="Large"
-              HorizontalOptions="Center"
-               VerticalOptions="Center"/>
+          </ListView>
+    
+   <Grid>
+  <Grid.RowDefinitions>
+    <RowDefinition Height="*" />
+    <RowDefinition Height="*" />
+  </Grid.RowDefinitions>
+  <Grid.ColumnDefinitions>
+    <ColumnDefinition Width="*" />
+    <ColumnDefinition Width="*" />
+  </Grid.ColumnDefinitions>
+  <Button Text="ACCEPT " Grid.Row="0"
+    Grid.Column="0" 
+     BackgroundColor="Green" 
+     FontAttributes="Bold" 
+     FontSize="Medium" TextColor="Black" 
+     Clicked="OnAcceptButtonClicked"/>
+  <Button Text="SUBMIT" Grid.Row="0" 
+          Grid.Column="1" 
+     BackgroundColor="Pink" 
+     FontAttributes="Bold" 
+     FontSize="Medium" 
+     TextColor="Black" 
+     Clicked="OnSubmitButtonClicked"/>
+     <Button Text="DECLINE" Grid.Row="0" 
+          Grid.Column="2" 
+     BackgroundColor="Yellow" 
+     FontAttributes="Bold" 
+     FontSize="Medium" 
+     TextColor="Black" 
+     Clicked="OnDeclineButtonClicked"/>
+  <Button Text="RESET" Grid.Row="0" 
+          Grid.Column="3" 
+          BackgroundColor="Red" 
+         FontAttributes="Bold" 
+        FontSize="Medium" 
+          TextColor="Black" 
+          Clicked="OnAcceptButtonClicked"/>
+</Grid>
+     
+      
+      
+    
+  
+   
+   
+     
     </StackLayout>
+ 
   </ScrollView>
 </ContentPage>
