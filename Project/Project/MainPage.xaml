@@ -12,29 +12,34 @@
            HorizontalOptions="Center"
            FontSize="Large"/>
       </Frame>
-    <Entry IsPassword ="True" Placeholder="LogIn"/>
-    <Entry Placeholder="School Name" />
-    <Entry Placeholder="School Location"/>
-    <Entry Placeholder="First Name"/>
-    <Entry Placeholder="Last Name"/>
-    <Entry Placeholder="Alias"/>
-      <Entry Placeholder="Choose your Major"/>
-        <ListView x:Name="MajorList">
-          <ListView.ItemsSource>
-            <x:Array Type="{x:Type x:String}">
-              <x:String>Software Programming</x:String>
-              <x:String>Robotics and engineering</x:String>
-              <x:String>Nursing</x:String>
-              <x:String>Project Management</x:String>
-              <x:String>Computer Networking</x:String>
-              <x:String>Dental Hygine</x:String>
-              <x:String>Social Science</x:String>
-              <x:String>AutoBody and Mechanics</x:String>
-            </x:Array>
-          </ListView.ItemsSource>
-          </ListView>
-    
-   <Grid>
+    <Frame>
+      <Picker x:Name ="Major" Title="Major"
+      SelectedIndexChanged="OnPickerSelectedIndexChanged">
+
+        <Picker.Items >
+          <x:String>Information Technology</x:String>
+          <x:String>Nursing</x:String>
+          <x:String>Dental Hygine</x:String>
+          <x:String>Robotics and Engineering</x:String>
+          <x:String>Capentry and home remodelling</x:String>
+          <x:String>TeleCommunications </x:String>
+          <x:String>Applied science</x:String>
+
+        </Picker.Items>
+      </Picker>
+    </Frame>
+   
+
+    <Entry x:Name ="School" Placeholder="School Name" />
+    <Entry x:Name ="Location" Placeholder="School Location"/>
+    <Entry x:Name ="FName" Placeholder="First Name"/>
+    <Entry x:Name ="LName" Placeholder="Last Name"/>
+    <Entry x:Name ="NName" Placeholder="Nick Name"/>
+    <Entry x:Name ="Entry" Placeholder="Year of Entry"/>
+    <Entry x:Name ="Exit" Placeholder="Year of Exit"/>
+
+
+    <Grid>
   <Grid.RowDefinitions>
     <RowDefinition Height="*" />
     <RowDefinition Height="*" />
@@ -43,42 +48,34 @@
     <ColumnDefinition Width="*" />
     <ColumnDefinition Width="*" />
   </Grid.ColumnDefinitions>
-  <Button Text="ACCEPT " Grid.Row="0"
-    Grid.Column="0" 
-     BackgroundColor="Green" 
-     FontAttributes="Bold" 
-     FontSize="Medium" TextColor="Black" 
-     Clicked="OnAcceptButtonClicked"/>
+  
   <Button Text="SUBMIT" Grid.Row="0" 
-          Grid.Column="1" 
+          Grid.Column="0" 
      BackgroundColor="Pink" 
      FontAttributes="Bold" 
      FontSize="Medium" 
      TextColor="Black" 
      Clicked="OnSubmitButtonClicked"/>
      <Button Text="DECLINE" Grid.Row="0" 
-          Grid.Column="2" 
+          Grid.Column="1" 
      BackgroundColor="Yellow" 
      FontAttributes="Bold" 
      FontSize="Medium" 
      TextColor="Black" 
      Clicked="OnDeclineButtonClicked"/>
   <Button Text="RESET" Grid.Row="0" 
-          Grid.Column="3" 
+          Grid.Column="2" 
           BackgroundColor="Red" 
          FontAttributes="Bold" 
         FontSize="Medium" 
           TextColor="Black" 
-          Clicked="OnAcceptButtonClicked"/>
+          Clicked="OnResetButtonClicked"/>
 </Grid>
-     
-      
-      
     
-  
+    
+
+
    
-   
-     
     </StackLayout>
  
   </ScrollView>
